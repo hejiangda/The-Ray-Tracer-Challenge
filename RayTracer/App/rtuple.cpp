@@ -9,8 +9,13 @@ RTuple::RTuple(float x, float y, float z,float w):
 TupeType RTuple::type() {
     return w==1.0?POINT:VECTOR;
 }
+bool RTuple::floatCmp(const float& a,const float& b)const {
+    const float EPSILON=1E-5;
+    if(std::fabs(a-b)<EPSILON)return true;
+    return false;
+}
 bool RTuple::operator==(const RTuple& b)const {
-    return (x==b.x and y==b.y and z==b.z and w==b.w);
+    return (floatCmp(x,b.x) and floatCmp(y,b.y) and floatCmp(z,b.z) and floatCmp(w,b.w));
 }
 RPoint::RPoint(float xx,float yy,float zz)
 {

@@ -1,5 +1,6 @@
 #ifndef RTUPLE_H
 #define RTUPLE_H
+#include <cmath>
 
 enum TupeType{POINT,VECTOR};
 class RTuple
@@ -10,6 +11,9 @@ public:
     float x,y,z,w;
     TupeType type();
     bool operator==(const RTuple& )const;
+private:
+
+    bool floatCmp(const float& a,const float& b)const;
 };
 class RPoint:public RTuple
 {
