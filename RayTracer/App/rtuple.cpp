@@ -23,6 +23,12 @@ RTuple RTuple::operator+(const RTuple& b) {
 RTuple RTuple::operator-() {
     return RTuple(-x,-y,-z,-w);
 }
+RTuple RTuple::operator*(const float& scal) {
+    return RTuple(x*scal,y*scal,z*scal,w*scal);
+}
+RTuple operator*(const float& scal,const RTuple& b) {
+    return RTuple(b.x*scal,b.y*scal,b.z*scal,b.w*scal);
+}
 RPoint::RPoint(float xx,float yy,float zz)
 {
     x=xx;y=yy;z=zz;

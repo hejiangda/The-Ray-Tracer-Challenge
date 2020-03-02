@@ -13,6 +13,8 @@ public:
     bool operator==(const RTuple& )const;
     RTuple operator+(const RTuple& );
     RTuple operator-();
+    RTuple operator*(const float& );
+    friend RTuple operator*(const float& a,const RTuple& b);
 private:
 
     bool floatCmp(const float& a,const float& b)const;

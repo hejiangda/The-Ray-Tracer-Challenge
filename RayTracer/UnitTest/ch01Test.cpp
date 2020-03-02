@@ -53,3 +53,13 @@ TEST(Operations,NegativeTuple) {
     RTuple v(1,-2,3,-4);
     ASSERT_EQ(-v,RTuple(-1,2,-3,4));
 }
+TEST(Operations,ScalarMultiply1) {
+    RTuple a(1,-2,3,-4);
+    ASSERT_EQ(a*3.5,RTuple(3.5,-7,10.5,-14));
+    ASSERT_EQ(3.5*a,RTuple(3.5,-7,10.5,-14));
+}
+TEST(Operations,ScalarMultiply2) {
+    RTuple a(1,-2,3,-4);
+    ASSERT_EQ(a*0.5,RTuple(0.5,-1,1.5,-2));
+    ASSERT_EQ(0.5*a,RTuple(0.5,-1,1.5,-2));
+}
