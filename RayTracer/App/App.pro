@@ -18,11 +18,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    rtuple.cpp
+    Tuple/rtuple.cpp
 
 HEADERS += \
     mainwindow.h \
-    rtuple.h
+    Tuple/rtuple.h
 
 FORMS += \
     mainwindow.ui

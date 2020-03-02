@@ -7,11 +7,11 @@ CONFIG += thread
 CONFIG -= qt
 
 HEADERS += \
-        ../App/rtuple.h \
+        ../App/Tuple/rtuple.h \
         ch01Test.h
 
 SOURCES += \
         ch01Test.cpp \
         main.cpp \
-        ../App/rtuple.cpp
+        ../App/Tuple/rtuple.cpp
 
