@@ -41,11 +41,8 @@ Then create your step definition runner (an example is available [here](https://
 
 **已经放弃使用cucumber-cpp改用googletest了，cucumber-cpp的资料太少了，之后在java上用cucumber吧。**
 
-### 安装googletest
+### 在qt中使用googletest进行单元测试
 
-```shell
-git clone https://github.com/google/googletest.git
-cmake CMakeLists.txt
-sudo make install
-```
+qt文档中关于如何使用googletest的说明
 
+https://doc.qt.io/qtcreator/creator-autotest.html
