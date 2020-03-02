@@ -9,7 +9,7 @@ RTuple::RTuple(float x, float y, float z,float w):
 TupeType RTuple::type() {
     return w==1.0?POINT:VECTOR;
 }
-bool RTuple::floatCmp(const float& a,const float& b)const {
+bool floatCmp(const float& a,const float& b) {
     const float EPSILON=1E-5;
     if(std::fabs(a-b)<EPSILON)return true;
     return false;
@@ -54,9 +54,17 @@ RVector::RVector(float xx,float yy,float zz)
 RVector RVector::operator-(const RVector& b) {
     return RVector(x-b.x,y-b.y,z-b.z);
 }
-float RVector::magnitude()const {
+float RVector::magnitude() {
     return std::sqrt(x*x+y*y+z*z);
 }
-float magnitude(const RVector& v) {
+float magnitude(RVector& v) {
     return v.magnitude();
+}
+RVector RVector::normalize() {
+    float m=magnitude();
+    return RVector(x/m,y/m,z/m);
+}
+RVector normalize(RVector& v) {
+    float m=magnitude(v);
+    return RVector(v.x/m,v.y/m,v.z/m);
 }
