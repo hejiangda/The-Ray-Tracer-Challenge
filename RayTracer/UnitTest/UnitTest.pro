@@ -7,8 +7,8 @@ CONFIG += thread
 CONFIG -= qt
 
 HEADERS += \
-        tst_tuples.h \
-        ../App/rtuple.h
+        ../App/rtuple.h \
+        ch01Test.h
 
 SOURCES += \
         ch01Test.cpp \
