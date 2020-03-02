@@ -50,3 +50,7 @@ https://doc.qt.io/qtcreator/creator-autotest.html
 googletest官方文档：
 
 https://github.com/google/googletest/blob/master/googletest/docs/primer.md
+
+## 1. **Tuples, Points,** and Vectors
+
+编写最基本的单元，元组是点和向量的底层数据结构，Point和Vector继承于Tuple。w分量为1的为点，为0的为向量。
