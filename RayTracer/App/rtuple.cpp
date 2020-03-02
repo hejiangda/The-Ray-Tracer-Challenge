@@ -17,13 +17,25 @@ bool RTuple::floatCmp(const float& a,const float& b)const {
 bool RTuple::operator==(const RTuple& b)const {
     return (floatCmp(x,b.x) and floatCmp(y,b.y) and floatCmp(z,b.z) and floatCmp(w,b.w));
 }
+RTuple RTuple::operator+(const RTuple& b) {
+    return RTuple(x+b.x,y+b.y,z+b.z,w+b.w);
+}
 RPoint::RPoint(float xx,float yy,float zz)
 {
     x=xx;y=yy;z=zz;
     w=1;
 }
+RVector RPoint::operator-(const RPoint& b) {
+    return RVector(x-b.x,y-b.y,z-b.z);
+}
+RPoint RPoint::operator-(const RVector& b) {
+    return RPoint(x-b.x,y-b.y,z-b.z);
+}
 RVector::RVector(float xx,float yy,float zz)
 {
     x=xx;y=yy;z=zz;
     w=0;
+}
+RVector RVector::operator-(const RVector& b) {
+    return RVector(x-b.x,y-b.y,z-b.z);
 }

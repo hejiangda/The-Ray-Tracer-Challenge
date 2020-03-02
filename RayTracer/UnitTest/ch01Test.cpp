@@ -28,3 +28,20 @@ TEST(Tuples,CreateVector) {
     RVector v(4,-4,3);
     ASSERT_EQ(v,RTuple(4,-4,3,0));
 }
+TEST(Operations,TupleAdd) {
+    RTuple a1(3,-2,5,1),a2(-2,3,1,0);
+    ASSERT_EQ(a1+a2,RTuple(1,1,6,1));
+}
+TEST(Operations,PointSub) {
+    RPoint p1(3,2,1),p2(5,6,7);
+    ASSERT_EQ(p1-p2,RVector(-2,-4,-6));
+}
+TEST(Operations,PointSubVector) {
+    RPoint p(3,2,1);
+    RVector v(5,6,7);
+    ASSERT_EQ(p-v,RPoint(-2,-4,-6));
+}
+TEST(Operations,VectorSub) {
+    RVector v1(3,2,1),v2(5,6,7);
+    ASSERT_EQ(v1-v2,RVector(-2,-4,-6));
+}
