@@ -1,6 +1,6 @@
 # The-Ray-Tracer-Challenge
 
-这是我阅读《The Ray Tracer Challenge》时写的练习代码，该书在oreilly在线图书馆的地址为：
+这是我阅读**《The Ray Tracer Challenge》**时写的练习代码，该书在oreilly在线图书馆的地址为：
 
 https://learning.oreilly.com/library/view/the-ray-tracer/9781680506778/
 
@@ -41,5 +41,11 @@ Then create your step definition runner (an example is available [here](https://
 
 **已经放弃使用cucumber-cpp改用googletest了，cucumber-cpp的资料太少了，之后在java上用cucumber吧。**
 
+### 安装googletest
 
+```shell
+git clone https://github.com/google/googletest.git
+cmake CMakeLists.txt
+sudo make install
+```
 
