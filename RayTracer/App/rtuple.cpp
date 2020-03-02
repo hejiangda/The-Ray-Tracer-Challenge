@@ -20,6 +20,9 @@ bool RTuple::operator==(const RTuple& b)const {
 RTuple RTuple::operator+(const RTuple& b) {
     return RTuple(x+b.x,y+b.y,z+b.z,w+b.w);
 }
+RTuple RTuple::operator-() {
+    return RTuple(-x,-y,-z,-w);
+}
 RPoint::RPoint(float xx,float yy,float zz)
 {
     x=xx;y=yy;z=zz;

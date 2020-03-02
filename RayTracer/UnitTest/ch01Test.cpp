@@ -45,3 +45,11 @@ TEST(Operations,VectorSub) {
     RVector v1(3,2,1),v2(5,6,7);
     ASSERT_EQ(v1-v2,RVector(-2,-4,-6));
 }
+TEST(Operations,ZeroSubVector) {
+    RVector zero,v(1,-2,3);
+    ASSERT_EQ(zero-v,RVector(-1,2,-3));
+}
+TEST(Operations,NegativeTuple) {
+    RTuple v(1,-2,3,-4);
+    ASSERT_EQ(-v,RTuple(-1,2,-3,4));
+}

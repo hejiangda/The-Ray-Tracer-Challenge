@@ -12,6 +12,7 @@ public:
     TupeType type();
     bool operator==(const RTuple& )const;
     RTuple operator+(const RTuple& );
+    RTuple operator-();
 private:
 
     bool floatCmp(const float& a,const float& b)const;
