@@ -1,6 +1,6 @@
 # The-Ray-Tracer-Challenge
 
-这是我阅读**《The Ray Tracer Challenge》**时写的练习代码，该书在oreilly在线图书馆的地址为：
+这是我阅读 **《The Ray Tracer Challenge》** 时写的练习代码，该书在oreilly在线图书馆的地址为：
 
 https://learning.oreilly.com/library/view/the-ray-tracer/9781680506778/
 
