@@ -69,38 +69,46 @@ TEST(Operations,ScalarDiv) {
 }
 TEST(Operations,Magnitude1) {
     RVector v(1,0,0);
-    ASSERT_TRUE(floatCmp(1.0,magnitude(v)));
+
     ASSERT_TRUE(floatCmp(1.0,v.magnitude()));
 }
 TEST(Operations,Magnitude2) {
     RVector v(0,1,0);
-    ASSERT_TRUE(floatCmp(1.0,magnitude(v)));
+
     ASSERT_TRUE(floatCmp(1.0,v.magnitude()));
 }
 TEST(Operations,Magnitude3) {
     RVector v(0,0,1);
-    ASSERT_TRUE(floatCmp(1.0,magnitude(v)));
+
     ASSERT_TRUE(floatCmp(1.0,v.magnitude()));
 }
 TEST(Operations,Magnitude4) {
     RVector v(1,2,3);
-    ASSERT_TRUE(floatCmp(sqrt(14),magnitude(v)));
+
     ASSERT_TRUE(floatCmp(sqrt(14),v.magnitude()));
 }
 TEST(Operations,Normalize1) {
     RVector v(4,0,0);
-    ASSERT_EQ(normalize(v),RVector(1,0,0));
+
     ASSERT_EQ(v.normalize(),RVector(1,0,0));
 }
 TEST(Operations,Normalize2) {
     RVector v(1,2,3);
-    ASSERT_EQ(normalize(v),RVector(1/sqrt(14),2/sqrt(14),3/sqrt(14)));
+
     ASSERT_EQ(v.normalize(),RVector(1/sqrt(14),2/sqrt(14),3/sqrt(14)));
 }
 TEST(Operations,Normalize3) {
     RVector v(1,2,3);
     RVector norm=v.normalize();
-    ASSERT_TRUE(floatCmp(1.0,magnitude(norm)));
-    ASSERT_TRUE(floatCmp(1.0,norm.magnitude()));
 
+    ASSERT_TRUE(floatCmp(1.0,norm.magnitude()));
+}
+TEST(Operations,DotProduct) {
+    RVector a(1,2,3),b(2,3,4);
+    ASSERT_TRUE(floatCmp(a*b,20));
+}
+TEST(Operations,CrossProduct) {
+    RVector a(1,2,3),b(2,3,4);
+    ASSERT_EQ(a&b,RVector(-1,2,-1));
+    ASSERT_EQ(b&a,RVector(1,-2,1));
 }

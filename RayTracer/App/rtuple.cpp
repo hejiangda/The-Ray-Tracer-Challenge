@@ -57,14 +57,16 @@ RVector RVector::operator-(const RVector& b) {
 float RVector::magnitude() {
     return std::sqrt(x*x+y*y+z*z);
 }
-float magnitude(RVector& v) {
-    return v.magnitude();
-}
 RVector RVector::normalize() {
     float m=magnitude();
     return RVector(x/m,y/m,z/m);
 }
-RVector normalize(RVector& v) {
-    float m=magnitude(v);
-    return RVector(v.x/m,v.y/m,v.z/m);
+float RVector::operator*(const RVector& b) const {
+    return x*b.x+y*b.y+z*b.z;
+}
+RVector RVector::operator&(const RVector& b) const {
+    return RVector(y*b.z-z*b.y,
+                   z*b.x-x*b.z,
+                   x*b.y-y*b.x
+                );
 }

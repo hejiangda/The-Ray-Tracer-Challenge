@@ -26,9 +26,9 @@ public:
     RVector(float x=0,float y=0,float z=0);
     RVector operator-(const RVector& );
     float magnitude();
-    friend float magnitude( RVector& v);
     RVector normalize();
-    friend RVector normalize( RVector& v);
+    float operator*(const RVector& b) const;
+    RVector operator&(const RVector& b) const;
 };
 class RPoint:public RTuple
 {
