@@ -4,6 +4,10 @@
 
 https://learning.oreilly.com/library/view/the-ray-tracer/9781680506778/
 
+官方地址：
+
+https://pragprog.com/book/jbtracer/the-ray-tracer-challenge
+
 这本书没有给出参考的代码，它完全要求读者自己写出代码完成挑战。它使用cucumber这个BDD（行为驱动开发）工具来给读者一个自测的环境。
 
 ## 0. 环境搭建
@@ -30,4 +34,12 @@ cmake --build build
 cmake --build build --target test
 cmake --build build --target features
 ```
+
+**HelloBDD**文件夹是安装cucumber-cpp后写的一个建立BDD项目的模板，用于熟悉cucumber的使用
+
+Then create your step definition runner (an example is available [here](https://github.com/cucumber/cucumber-cpp/blob/master/examples/Calc/features/step_definitions/BoostCalculatorSteps.cpp)). In order to compile the step definition runner, make sure to add [cucumber include directory](https://github.com/cucumber/cucumber-cpp/blob/master/includes) to the include path and link with *libcucumber-cpp.a* and additional testing libraries (boost unit test).
+
+**已经放弃使用cucumber-cpp改用googletest了，cucumber-cpp的资料太少了，之后在java上用cucumber吧。**
+
+
 
