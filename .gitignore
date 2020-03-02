@@ -33,3 +33,6 @@
 
 # Qt build folder
 build-*
+
+# Qt user project file
+*.pro.user*
