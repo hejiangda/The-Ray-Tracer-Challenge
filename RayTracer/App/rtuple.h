@@ -15,6 +15,8 @@ public:
     RTuple operator-();
     RTuple operator*(const float& );
     friend RTuple operator*(const float& a,const RTuple& b);
+    RTuple operator/(const float& );
+    friend RTuple operator/(const float& a,const RTuple& b);
 private:
 
     bool floatCmp(const float& a,const float& b)const;
@@ -24,6 +26,8 @@ class RVector:public RTuple
 public:
     RVector(float x=0,float y=0,float z=0);
     RVector operator-(const RVector& );
+    float magnitude()const;
+    friend float magnitude(const RVector& v);
 };
 class RPoint:public RTuple
 {

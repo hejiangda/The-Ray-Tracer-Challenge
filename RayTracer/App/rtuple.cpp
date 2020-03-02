@@ -29,6 +29,12 @@ RTuple RTuple::operator*(const float& scal) {
 RTuple operator*(const float& scal,const RTuple& b) {
     return RTuple(b.x*scal,b.y*scal,b.z*scal,b.w*scal);
 }
+RTuple RTuple::operator/(const float& scal) {
+    return RTuple(x/scal,y/scal,z/scal,w/scal);
+}
+RTuple operator/(const float& scal,const RTuple& b) {
+    return RTuple(b.x/scal,b.y/scal,b.z/scal,b.w/scal);
+}
 RPoint::RPoint(float xx,float yy,float zz)
 {
     x=xx;y=yy;z=zz;
@@ -47,4 +53,10 @@ RVector::RVector(float xx,float yy,float zz)
 }
 RVector RVector::operator-(const RVector& b) {
     return RVector(x-b.x,y-b.y,z-b.z);
+}
+float RVector::magnitude()const {
+    return std::sqrt(x*x+y*y+z*z);
+}
+float magnitude(const RVector& v) {
+    return v.magnitude();
 }

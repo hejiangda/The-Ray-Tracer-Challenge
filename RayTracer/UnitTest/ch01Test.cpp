@@ -63,3 +63,27 @@ TEST(Operations,ScalarMultiply2) {
     ASSERT_EQ(a*0.5,RTuple(0.5,-1,1.5,-2));
     ASSERT_EQ(0.5*a,RTuple(0.5,-1,1.5,-2));
 }
+TEST(Operations,ScalarDiv) {
+    RTuple a(1,-2,3,-4);
+    ASSERT_EQ(a/2,RTuple(0.5,-1,1.5,-2));
+}
+TEST(Operations,Magnitude1) {
+    RVector v(1,0,0);
+    ASSERT_EQ(magnitude(v),1);
+    ASSERT_EQ(v.magnitude(),1);
+}
+TEST(Operations,Magnitude2) {
+    RVector v(0,1,0);
+    ASSERT_EQ(magnitude(v),1);
+    ASSERT_EQ(v.magnitude(),1);
+}
+TEST(Operations,Magnitude3) {
+    RVector v(0,0,1);
+    ASSERT_EQ(magnitude(v),1);
+    ASSERT_EQ(v.magnitude(),1);
+}
+TEST(Operations,Magnitude4) {
+    RVector v(1,2,3);
+    ASSERT_EQ(magnitude(v),(float)sqrt(14));
+    ASSERT_EQ(v.magnitude(),(float)sqrt(14));
+}
