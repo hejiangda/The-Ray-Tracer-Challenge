@@ -43,6 +43,10 @@ Then create your step definition runner (an example is available [here](https://
 
 ### 在qt中使用googletest进行单元测试
 
-qt文档中关于如何使用googletest的说明
+qt文档中关于如何使用googletest的说明：
 
 https://doc.qt.io/qtcreator/creator-autotest.html
+
+googletest官方文档：
+
+https://github.com/google/googletest/blob/master/googletest/docs/primer.md
