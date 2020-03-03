@@ -40,16 +40,25 @@ RPoint::RPoint(float xx,float yy,float zz)
     x=xx;y=yy;z=zz;
     w=1;
 }
+RPoint::RPoint(RTuple b) {
+    x=b.x;y=b.y;z=b.z;w=1;
+}
 RVector RPoint::operator-(const RPoint& b) {
     return RVector(x-b.x,y-b.y,z-b.z);
 }
 RPoint RPoint::operator-(const RVector& b) {
     return RPoint(x-b.x,y-b.y,z-b.z);
 }
+RPoint RPoint::operator+(const RVector& b) {
+    return RPoint(x+b.x,y+b.y,z+b.z);
+}
 RVector::RVector(float xx,float yy,float zz)
 {
     x=xx;y=yy;z=zz;
     w=0;
+}
+RVector::RVector(RTuple b) {
+    x=b.x;y=b.y;z=b.z;w=0;
 }
 RVector RVector::operator-(const RVector& b) {
     return RVector(x-b.x,y-b.y,z-b.z);
@@ -69,4 +78,7 @@ RVector RVector::operator&(const RVector& b) const {
                    z*b.x-x*b.z,
                    x*b.y-y*b.x
                 );
+}
+RVector RVector::operator+(const RVector &b) const {
+    return RVector(x+b.x,y+b.y,z+b.z);
 }

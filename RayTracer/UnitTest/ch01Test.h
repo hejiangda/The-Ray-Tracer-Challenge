@@ -4,7 +4,7 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock-matchers.h>
 
-#include "../App/rtuple.h"
+#include "../App/Tuple/rtuple.h"
 
 using namespace testing;
 

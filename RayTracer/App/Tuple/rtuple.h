@@ -24,18 +24,22 @@ class RVector:public RTuple
 {
 public:
     RVector(float x=0,float y=0,float z=0);
+    RVector(RTuple b);
     RVector operator-(const RVector& );
     float magnitude();
     RVector normalize();
     float operator*(const RVector& b) const;
     RVector operator&(const RVector& b) const;
+    RVector operator+(const RVector& b) const;
 };
 class RPoint:public RTuple
 {
 public:
     RPoint(float x=0,float y=0,float z=0);
+    RPoint(RTuple b);
     RVector operator-(const RPoint& );
     RPoint operator-(const RVector& );
+    RPoint operator+(const RVector& );
 };
 
 

@@ -112,3 +112,4 @@ TEST(Operations,CrossProduct) {
     ASSERT_EQ(a&b,RVector(-1,2,-1));
     ASSERT_EQ(b&a,RVector(1,-2,1));
 }
+
