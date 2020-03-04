@@ -1,5 +1,5 @@
-#ifndef TST_TUPLES_H
-#define TST_TUPLES_H
+#ifndef UNITTEST_H
+#define UNITTEST_H
 
 #include <gtest/gtest.h>
 #include <gmock/gmock-matchers.h>
@@ -10,4 +10,4 @@ using namespace testing;
 
 
 
-#endif // TST_TUPLES_H
+#endif // UNITTEST_H

@@ -8,10 +8,10 @@ CONFIG -= qt
 
 HEADERS += \
         ../App/Tuple/rtuple.h \
-        ch01Test.h
+        UnitTest.h
 
 SOURCES += \
-        ch01Test.cpp \
+        UnitTest.cpp \
         main.cpp \
         ../App/Tuple/rtuple.cpp
 
