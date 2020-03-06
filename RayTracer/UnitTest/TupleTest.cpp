@@ -1,4 +1,4 @@
-#include "ch01Test.h"
+#include "UnitTest.h"
 
 TEST(Tuples,point)
 {
@@ -113,3 +113,27 @@ TEST(Operations,CrossProduct) {
     ASSERT_EQ(b&a,RVector(1,-2,1));
 }
 
+TEST(Colors,Object) {
+    RColor c(-0.5,0.4,1.7);
+    ASSERT_TRUE(floatCmp(c.r,-0.5));
+    ASSERT_TRUE(floatCmp(c.g,0.4));
+    ASSERT_TRUE(floatCmp(c.b,1.7));
+}
+
+TEST(Colors,Add) {
+    RColor c1(0.9,0.6,0.75),c2(0.7,0.1,0.25);
+    ASSERT_EQ(c1+c2,RColor(1.6, 0.7, 1.0));
+}
+TEST(Colors,Sub) {
+    RColor c1(0.9,0.6,0.75),c2(0.7,0.1,0.25);
+    ASSERT_EQ(c1-c2,RColor(0.2, 0.5, 0.5));
+}
+TEST(Colors,ScalarMultiply) {
+    RColor c1(0.2, 0.3, 0.4);
+    ASSERT_EQ(2*c1,RColor(0.4, 0.6, 0.8));
+    ASSERT_EQ(c1*2,RColor(0.4, 0.6, 0.8));
+}
+TEST(Colors,ColorMultiply) {
+    RColor c1(1, 0.2, 0.4),c2(0.9, 1, 0.1);
+    ASSERT_EQ(c1*c2,RColor(0.9, 0.2, 0.04));
+}

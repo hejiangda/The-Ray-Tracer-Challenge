@@ -16,11 +16,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Canvas/rcanvas.cpp \
     main.cpp \
     mainwindow.cpp \
     Tuple/rtuple.cpp
 
 HEADERS += \
+    Canvas/rcanvas.h \
     mainwindow.h \
     Tuple/rtuple.h
 

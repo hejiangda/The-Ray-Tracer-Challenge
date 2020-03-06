@@ -4,8 +4,8 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock-matchers.h>
 
+#include "../App/Canvas/rcanvas.h"
 #include "../App/Tuple/rtuple.h"
-
 using namespace testing;
 
 

@@ -82,3 +82,25 @@ RVector RVector::operator&(const RVector& b) const {
 RVector RVector::operator+(const RVector &b) const {
     return RVector(x+b.x,y+b.y,z+b.z);
 }
+
+RColor::RColor(float r,float g,float b):r(r),g(g),b(b) {
+
+}
+RColor RColor::operator+(const RColor& c) {
+    return RColor(r+c.r,g+c.g,b+c.b);
+}
+RColor RColor::operator-(const RColor& c) {
+    return RColor(r-c.r,g-c.g,b-c.b);
+}
+bool RColor::operator==(const RColor& c)const {
+    return floatCmp(r,c.r) and floatCmp(g,c.g) and floatCmp(b,c.b);
+}
+RColor RColor::operator*(const float& c) {
+    return RColor(r*c,g*c,b*c);
+}
+RColor operator*(const float& c,const RColor d) {
+    return RColor(c*d.r,c*d.g,c*d.b);
+}
+RColor RColor::operator*(const RColor& c) {
+    return RColor(r*c.r,g*c.g,b*c.b);
+}

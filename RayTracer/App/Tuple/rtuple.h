@@ -41,6 +41,17 @@ public:
     RPoint operator-(const RVector& );
     RPoint operator+(const RVector& );
 };
-
+class RColor
+{
+public:
+    RColor(float r=0,float g=0,float b=0);
+    float r,g,b;
+    RColor operator+(const RColor& c);
+    RColor operator-(const RColor& c);
+    bool operator==(const RColor& c)const;
+    RColor operator*(const float& c);
+    friend RColor operator*(const float& c,const RColor d);
+    RColor operator*(const RColor& c);
+};
 
 #endif // RTUPLE_H

@@ -8,10 +8,13 @@ CONFIG -= qt
 
 HEADERS += \
         ../App/Tuple/rtuple.h \
-        UnitTest.h
+        UnitTest.h \
+        ../App/Canvas/rcanvas.h
 
 SOURCES += \
-        UnitTest.cpp \
+        CanvasTest.cpp \
+        TupleTest.cpp \
         main.cpp \
-        ../App/Tuple/rtuple.cpp
+        ../App/Tuple/rtuple.cpp \
+        ../App/Canvas/rcanvas.cpp
 
