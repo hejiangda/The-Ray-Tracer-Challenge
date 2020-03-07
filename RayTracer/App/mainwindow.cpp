@@ -22,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
     projectile proj(RPoint(0,1,0),RVector(1,1.8,0).normalize()*11.25);
     environment env(RVector(0,-0.1,0),RVector(-0.01,0,0));
     int tick=0;
