@@ -18,6 +18,21 @@ TEST(Canvas,Write) {
     ASSERT_EQ(c.at(2,3),red);
 }
 
-//TEST(Canvas,PPMheader) {
-
-//}
+TEST(Canvas,PPMheader) {
+    RCanvas c(5,3);
+    QString ppm=c.to_ppm();
+    QStringList list = ppm.split('\n', QString::SkipEmptyParts);
+    ASSERT_EQ(list.at(0),QString("P3"));
+    ASSERT_EQ(list.at(1),QString("5 3"));
+    ASSERT_EQ(list.at(2),QString("255"));
+}
+TEST(Canvas,Data2PPM) {
+    RCanvas c(5,3);
+    c.write(0,0,RColor(1.5,0,0));
+    c.write(2,1,RColor(0,0.5,0));
+    c.write(4,2,RColor(-0.5,0,1));
+    QStringList list = c.to_ppm().split('\n', QString::SkipEmptyParts);
+    EXPECT_STREQ(list.at(3).toStdString().c_str(),"255 0 0 0 0 0 0 0 0 0 0 0 0 0 0");
+    EXPECT_STREQ(list.at(4).toStdString().c_str(),"0 0 0 0 0 0 0 128 0 0 0 0 0 0 0");
+    EXPECT_STREQ(list.at(5).toStdString().c_str(),"0 0 0 0 0 0 0 0 0 0 0 0 0 0 255");
+}
