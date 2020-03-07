@@ -7,7 +7,6 @@ bool floatCmp(const float& a,const float& b);
 class RTuple
 {
 public:
-
     RTuple(float x=0, float y=0, float z=0, float w=1);
     float x,y,z,w;
     TupeType type();
@@ -28,6 +27,8 @@ public:
     RVector operator-(const RVector& );
     float magnitude();
     RVector normalize();
+    RVector operator*(const float& b) const;
+    friend RVector operator*(const float& scal,const RVector b);
     float operator*(const RVector& b) const;
     RVector operator&(const RVector& b) const;
     RVector operator+(const RVector& b) const;
@@ -40,6 +41,8 @@ public:
     RVector operator-(const RPoint& );
     RPoint operator-(const RVector& );
     RPoint operator+(const RVector& );
+    RPoint operator*(const float& ) const;
+    friend RPoint operator*(const float& scal,const RPoint b);
 };
 class RColor
 {

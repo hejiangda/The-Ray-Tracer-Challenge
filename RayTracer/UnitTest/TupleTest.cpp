@@ -58,10 +58,21 @@ TEST(Operations,ScalarMultiply1) {
     ASSERT_EQ(a*3.5,RTuple(3.5,-7,10.5,-14));
     ASSERT_EQ(3.5*a,RTuple(3.5,-7,10.5,-14));
 }
+
 TEST(Operations,ScalarMultiply2) {
     RTuple a(1,-2,3,-4);
     ASSERT_EQ(a*0.5,RTuple(0.5,-1,1.5,-2));
     ASSERT_EQ(0.5*a,RTuple(0.5,-1,1.5,-2));
+}
+TEST(Operations,VectorScalarMultiply){
+    RVector a(1,-2,3);
+    EXPECT_EQ(a*0.5,RVector(0.5,-1,1.5));
+    EXPECT_EQ(0.5*a,RVector(0.5,-1,1.5));
+}
+TEST(Operations,PointScalarMultiply){
+    RPoint a(1,-2,3);
+    EXPECT_EQ(a*0.5,RPoint(0.5,-1,1.5));
+    EXPECT_EQ(0.5*a,RPoint(0.5,-1,1.5));
 }
 TEST(Operations,ScalarDiv) {
     RTuple a(1,-2,3,-4);

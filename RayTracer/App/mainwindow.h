@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include "Tuple/rtuple.h"
+#include "Canvas/rcanvas.h"
+#include <QFile>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE

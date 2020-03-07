@@ -12,7 +12,7 @@ RColor RCanvas::at(int col,int row) {
     return data[row][col];
 }
 bool RCanvas::write(int col,int row,RColor c) {
-    if(row>=height or col>=width)return false;
+    if(row>=height or col>=width or row<0 or col <0)return false;
     data[row][col]=c;
     return true;
 }

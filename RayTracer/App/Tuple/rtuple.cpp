@@ -1,10 +1,7 @@
 #include "rtuple.h"
 
 RTuple::RTuple(float x, float y, float z,float w):
-    x(x),y(y),z(z),w(w)
-{
-
-}
+    x(x),y(y),z(z),w(w){}
 
 TupeType RTuple::type() {
     return w==1.0?POINT:VECTOR;
@@ -52,6 +49,12 @@ RPoint RPoint::operator-(const RVector& b) {
 RPoint RPoint::operator+(const RVector& b) {
     return RPoint(x+b.x,y+b.y,z+b.z);
 }
+RPoint RPoint::operator*(const float& b) const {
+    return RPoint(x*b,y*b,z*b);
+}
+RPoint operator*(const float& scal,const RPoint b) {
+    return RPoint(scal*b.x,scal*b.y,scal*b.z);
+}
 RVector::RVector(float xx,float yy,float zz)
 {
     x=xx;y=yy;z=zz;
@@ -65,6 +68,12 @@ RVector RVector::operator-(const RVector& b) {
 }
 float RVector::magnitude() {
     return std::sqrt(x*x+y*y+z*z);
+}
+RVector RVector::operator*(const float& b) const {
+    return RVector(x*b,y*b,z*b);
+}
+RVector operator*(const float& scal,const RVector b) {
+    return RVector(scal*b.x,scal*b.y,scal*b.z);
 }
 RVector RVector::normalize() {
     float m=magnitude();
