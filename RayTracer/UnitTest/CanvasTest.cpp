@@ -36,3 +36,23 @@ TEST(Canvas,Data2PPM) {
     EXPECT_STREQ(list.at(4).toStdString().c_str(),"0 0 0 0 0 0 0 128 0 0 0 0 0 0 0");
     EXPECT_STREQ(list.at(5).toStdString().c_str(),"0 0 0 0 0 0 0 0 0 0 0 0 0 0 255");
 }
+TEST(Canvas,SplitLongLinesPPM) {
+    RCanvas c(10,2);
+    RColor color(1,.8,.6);
+    for(int i=0;i<c.width;i++) {
+        for(int j=0;j<c.height;j++) {
+            c.write(i,j,color);
+        }
+    }
+    QStringList list=c.to_ppm().split('\n', QString::SkipEmptyParts);
+    EXPECT_STREQ(list.at(3).toStdString().c_str(),"255 204 153 255 204 153 255 204 153 255 204 153 255 204 153 255 204");
+    EXPECT_STREQ(list.at(4).toStdString().c_str(),"153 255 204 153 255 204 153 255 204 153 255 204 153");
+    EXPECT_STREQ(list.at(5).toStdString().c_str(),"255 204 153 255 204 153 255 204 153 255 204 153 255 204 153 255 204");
+    EXPECT_STREQ(list.at(6).toStdString().c_str(),"153 255 204 153 255 204 153 255 204 153 255 204 153");
+
+}
+TEST(Canvas,PPMTerminatedByNewLine) {
+    RCanvas c(5,3);
+    QString ppm=c.to_ppm();
+    EXPECT_EQ(ppm.back(),'\n');
+}
