@@ -13,6 +13,7 @@ HEADERS += \
 
 SOURCES += \
         CanvasTest.cpp \
+        MatricTest.cpp \
         TupleTest.cpp \
         main.cpp \
         ../App/Tuple/rtuple.cpp \
