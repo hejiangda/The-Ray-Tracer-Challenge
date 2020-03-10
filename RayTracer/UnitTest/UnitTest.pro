@@ -14,7 +14,8 @@ HEADERS += \
 
 SOURCES += \
         CanvasTest.cpp \
-        MatricTest.cpp \
+        MatrixTest.cpp \
+        MatrixTransformationTest.cpp \
         TupleTest.cpp \
         main.cpp \
         ../App/Tuple/rtuple.cpp \

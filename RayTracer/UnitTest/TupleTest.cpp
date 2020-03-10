@@ -18,6 +18,7 @@ TEST(Tuples,point)
     ASSERT_EQ(a.w,float(1.0));
     ASSERT_EQ(a.type(),POINT);
     ASSERT_NE(a.type(),VECTOR);
+    ASSERT_EQ(a,RPoint(4.3,-4.2,3.1));
 }
 TEST(Tuples,vector)
 {
@@ -28,10 +29,21 @@ TEST(Tuples,vector)
     ASSERT_EQ(a.w,float(0.0));
     ASSERT_NE(a.type(),POINT);
     ASSERT_EQ(a.type(),VECTOR);
+    ASSERT_EQ(a,RVector(4.3,-4.2,3.1));
 }
 TEST(Tuples,CreatePoint) {
     RPoint p(4,-4,3);
     ASSERT_EQ(p,RTuple(4,-4,3,1));
+}
+TEST(Tuples,Point2Tuple) {
+    RPoint p(4,-4,3);
+    RTuple q(p);
+    ASSERT_EQ(q,RTuple(4,-4,3,1));
+}
+TEST(Tuples,Vector2Tuple) {
+    RVector p(4,-4,3);
+    RTuple q(p);
+    ASSERT_EQ(q,RTuple(4,-4,3,0));
 }
 TEST(Tuples,CreateVector) {
     RVector v(4,-4,3);
