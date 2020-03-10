@@ -32,6 +32,24 @@ RTuple RTuple::operator/(const float& scal) {
 RTuple operator/(const float& scal,const RTuple& b) {
     return RTuple(b.x/scal,b.y/scal,b.z/scal,b.w/scal);
 }
+float& RTuple::operator[](int idx) {
+    switch (idx) {
+    case 0:return x;
+    case 1:return y;
+    case 2:return z;
+    case 3:return w;
+    }
+    return x;
+}
+const float& RTuple::operator[](int idx)const {
+    switch (idx) {
+    case 0:return x;
+    case 1:return y;
+    case 2:return z;
+    case 3:return w;
+    }
+    return x;
+}
 RPoint::RPoint(float xx,float yy,float zz)
 {
     x=xx;y=yy;z=zz;

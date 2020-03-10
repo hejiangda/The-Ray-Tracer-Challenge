@@ -1,8 +1,17 @@
 #include "UnitTest.h"
-
+TEST(Tuples,squareBracket) {
+    RTuple a({4.3,-4.2,3.1,1.0});
+    RTuple b;
+    b[0]=4.3;
+    b[1]=-4.2;
+    b[2]=3.1;
+    b[3]=1.0;
+    ASSERT_EQ(a,b);
+}
 TEST(Tuples,point)
 {
     RTuple a(4.3,-4.2,3.1,1.0);
+
     ASSERT_EQ(a.x,float(4.3));
     ASSERT_EQ(a.y,float(-4.2));
     ASSERT_EQ(a.z,float(3.1));

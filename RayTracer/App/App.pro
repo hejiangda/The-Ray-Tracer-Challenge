@@ -19,12 +19,14 @@ SOURCES += \
     Canvas/rcanvas.cpp \
     main.cpp \
     mainwindow.cpp \
-    Tuple/rtuple.cpp
+    Tuple/rtuple.cpp \
+    Matrix/rmatrix.cpp
 
 HEADERS += \
     Canvas/rcanvas.h \
     mainwindow.h \
-    Tuple/rtuple.h
+    Tuple/rtuple.h \
+    Matrix/rmatrix.h
 
 FORMS += \
     mainwindow.ui

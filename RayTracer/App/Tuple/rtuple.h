@@ -1,13 +1,15 @@
 #ifndef RTUPLE_H
 #define RTUPLE_H
 #include <cmath>
-
+#include <vector>
+using namespace std;
 enum TupeType{POINT,VECTOR};
 bool floatCmp(const float& a,const float& b);
 class RTuple
 {
 public:
-    RTuple(float x=0, float y=0, float z=0, float w=1);
+    RTuple(float x=0, float y=0, float z=0, float w=0);
+
     float x,y,z,w;
     TupeType type();
     bool operator==(const RTuple& )const;
@@ -17,7 +19,8 @@ public:
     friend RTuple operator*(const float& a,const RTuple& b);
     RTuple operator/(const float& );
     friend RTuple operator/(const float& a,const RTuple& b);
-
+    float& operator[](int idx);
+    const float& operator[](int idx)const;
 };
 class RVector:public RTuple
 {

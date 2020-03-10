@@ -9,7 +9,8 @@ CONFIG += qt
 HEADERS += \
         ../App/Tuple/rtuple.h \
         UnitTest.h \
-        ../App/Canvas/rcanvas.h
+        ../App/Canvas/rcanvas.h \
+        ../App/Matrix/rmatrix.h
 
 SOURCES += \
         CanvasTest.cpp \
@@ -17,5 +18,6 @@ SOURCES += \
         TupleTest.cpp \
         main.cpp \
         ../App/Tuple/rtuple.cpp \
-        ../App/Canvas/rcanvas.cpp
+        ../App/Canvas/rcanvas.cpp \
+        ../App/Matrix/rmatrix.cpp
 
