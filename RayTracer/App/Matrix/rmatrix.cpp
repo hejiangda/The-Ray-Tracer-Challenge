@@ -1,5 +1,8 @@
 #include "rmatrix.h"
 
+RMatrix4::RMatrix4() {
+    toIdentity();
+}
 RMatrix4::RMatrix4(vector<float>m)
 {
     int sz=m.size();
@@ -12,6 +15,7 @@ RMatrix4::RMatrix4(vector<float>m)
         *(p++)=0;
         i++;
     }
+
 }
 float* RMatrix4::operator[](int idx) {
     if(idx>=4 or idx<0)idx=0;
@@ -31,7 +35,7 @@ bool RMatrix4::operator!=(const RMatrix4& b)const {
     return !operator==(b);
 }
 RMatrix4 RMatrix4::operator*(const RMatrix4& b) {
-    RMatrix4 ret;
+    RMatrix4 ret({0});
     for(int i=0;i<4;i++)for(int j=0;j<4;j++) {
         for(int h=0;h<4;h++) {
             ret[i][j]+=data[i][h]*b[h][j];
@@ -52,12 +56,33 @@ void RMatrix4::toIdentity() {
         else data[i][j]=0;
     }
 }
+#include <iostream>
+void RMatrix4::print() {
+    cout<<"["<<endl;
+    for(int i=0;i<4;i++) {
+        for(int j=0;j<4;j++) {
+            cout<<data[i][j]<< " ";
+        }
+        cout<<endl;
+    }
+    cout<<"]"<<endl;
+}
 RMatrix4 RMatrix4::transpose() {
     RMatrix4 ret;
     for(int i=0;i<4;i++)for(int j=0;j<4;j++) {
         ret[j][i]=data[i][j];
     }
     return ret;
+}
+void RMatrix4::translation(float x,float y,float z) {
+    data[0][3]+=x;
+    data[1][3]+=y;
+    data[2][3]+=z;
+}
+void RMatrix4::scale(float x,float y,float z) {
+    data[0][0]*=x;
+    data[1][1]*=y;
+    data[2][2]*=z;
 }
 RMatrix3 RMatrix4::submatrix(int row,int col) {
     RMatrix3 ret;

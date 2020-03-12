@@ -7,7 +7,9 @@ class RMatrix3;
 class RMatrix4
 {
 public:
-    RMatrix4(vector<float>m={});
+    RMatrix4();
+    RMatrix4(vector<float>);
+
     float data[4][4];
     float* operator[](int idx);
     const float* operator[](int idx) const;
@@ -23,6 +25,9 @@ public:
     float determinant();
     bool canInv();
     RMatrix4 inverse();
+    void translation(float x,float y,float z);
+    void scale(float x,float y,float z);
+    void print();
 };
 class RMatrix2
 {

@@ -128,6 +128,10 @@ TEST(Matrix,MultiplyMatrix4x4) {
     c[2][0]=40;c[2][1]=58;c[2][2]=110;c[2][3]=102;
     c[3][0]=16;c[3][1]=26;c[3][2]=46;c[3][3]=42;
     EXPECT_EQ(a*b,c);
+    a.print();
+    b.print();
+    (a*b).print();
+    c.print();
 }
 TEST(Matrix,MultiplyTuple) {
     RMatrix4 a;
