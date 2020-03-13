@@ -69,3 +69,15 @@ https://blog.csdn.net/u010750137/article/details/104710846
 ## 1. **Tuples, Points,** and Vectors
 
 编写最基本的单元，元组是点和向量的底层数据结构，Point和Vector继承于Tuple。w分量为1的为点，为0的为向量。
+
+## 2. Drawing on a canvas
+
+编写一个canvas并能输出ppm文件
+
+## 3. Matrices 
+
+建立基础矩阵，矩阵的运算操作
+
+## 4.Matrix Transformation
+
+各类矩阵的变换：平移、旋转、放缩等
