@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "Tuple/rtuple.h"
 #include "Canvas/rcanvas.h"
+#include "Matrix/rmatrix.h"
 #include <QFile>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
