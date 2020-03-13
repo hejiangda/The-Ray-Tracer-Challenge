@@ -26,12 +26,13 @@ public:
     float determinant();
     bool canInv();
     RMatrix4 inverse();
-    void translation(float x,float y,float z);
-    void scale(float x,float y,float z);
+    RMatrix4& translation(float x,float y,float z);
+    RMatrix4& scale(float x,float y,float z);
     void print();
-    void rotation_x(float radians);
-    void rotation_y(float radians);
-    void rotation_z(float radians);
+    RMatrix4& rotation_x(float radians);
+    RMatrix4& rotation_y(float radians);
+    RMatrix4& rotation_z(float radians);
+    RMatrix4& shearing(float xy=0,float xz=0,float yx=0,float yz=0,float zx=0,float zy=0);
 };
 class RMatrix2
 {

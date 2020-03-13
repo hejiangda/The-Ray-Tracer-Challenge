@@ -90,3 +90,61 @@ TEST(MatrixTrans,RotatingZAxis) {
     EXPECT_EQ(full_quarter*p,RPoint(-1,0,0));
 
 }
+
+TEST(MatrixTrans,ShearingXY) {
+    RMatrix4 transform;
+    transform.shearing(1,0,0,0,0,0);
+    RPoint  p(2,3,4);
+    EXPECT_EQ(transform*p,RPoint(5,3,4));
+}
+TEST(MatrixTrans,ShearingXZ) {
+    RMatrix4 transform;
+    transform.shearing(0,1,0,0,0,0);
+    RPoint  p(2,3,4);
+    EXPECT_EQ(transform*p,RPoint(6,3,4));
+}
+TEST(MatrixTrans,ShearingYX) {
+    RMatrix4 transform;
+    transform.shearing(0,0,1,0,0,0);
+    RPoint  p(2,3,4);
+    EXPECT_EQ(transform*p,RPoint(2,5,4));
+}
+TEST(MatrixTrans,ShearingYZ) {
+    RMatrix4 transform;
+    transform.shearing(0,0,0,1,0,0);
+    RPoint  p(2,3,4);
+    EXPECT_EQ(transform*p,RPoint(2,7,4));
+}
+TEST(MatrixTrans,ShearingZX) {
+    RMatrix4 transform;
+    transform.shearing(0,0,0,0,1,0);
+    RPoint  p(2,3,4);
+    EXPECT_EQ(transform*p,RPoint(2,3,6));
+}
+TEST(MatrixTrans,ShearingZY) {
+    RMatrix4 transform;
+    transform.shearing(0,0,0,0,0,1);
+    RPoint  p(2,3,4);
+    EXPECT_EQ(transform*p,RPoint(2,3,7));
+}
+
+TEST(MatrixTrans,SequenceTransformation) {
+    RPoint p(1,0,1);
+    RMatrix4 A,B,C;
+    A.rotation_x(M_PI_2);
+    B.scale(5,5,5);
+    C.translation(10,5,7);
+    RPoint p2=A*p;
+    EXPECT_EQ(p2,RPoint(1,-1,0));
+    RPoint p3=B*p2;
+    EXPECT_EQ(p3,RPoint(5,-5,0));
+    RPoint p4=C*p3;
+    EXPECT_EQ(p4,RPoint(15,0,7));
+    EXPECT_EQ(C*B*A*p,p4);
+}
+TEST(MatrixTrans,FluentAPI) {
+    RPoint p(1,0,1);
+    RMatrix4 transform;
+    transform.translation(10,5,7).scale(5,5,5).rotation_x(M_PI_2);
+    EXPECT_EQ(transform*p,RPoint(15,0,7));
+}

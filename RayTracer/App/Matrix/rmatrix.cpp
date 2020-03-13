@@ -74,39 +74,65 @@ RMatrix4 RMatrix4::transpose() {
     }
     return ret;
 }
-void RMatrix4::translation(float x,float y,float z) {
-    data[0][3]+=x;
-    data[1][3]+=y;
-    data[2][3]+=z;
+RMatrix4& RMatrix4::translation(float x,float y,float z) {
+    RMatrix4 tmp;
+    tmp[0][3]+=x;
+    tmp[1][3]+=y;
+    tmp[2][3]+=z;
+    *this=operator*(tmp);
+    return *this;
 }
-void RMatrix4::scale(float x,float y,float z) {
-    data[0][0]*=x;
-    data[1][1]*=y;
-    data[2][2]*=z;
+RMatrix4& RMatrix4::scale(float x,float y,float z) {
+    RMatrix4 tmp;
+    tmp[0][0]*=x;
+    tmp[1][1]*=y;
+    tmp[2][2]*=z;
+    *this=operator*(tmp);
+    return *this;
 }
-void RMatrix4::rotation_x(float radians) {
+RMatrix4& RMatrix4::rotation_x(float radians) {
     float c=cos(radians);
     float s=sin(radians);
-    data[1][1]=c;
-    data[1][2]=-s;
-    data[2][1]=s;
-    data[2][2]=c;
+    RMatrix4 tmp;
+    tmp[1][1]=c;
+    tmp[1][2]=-s;
+    tmp[2][1]=s;
+    tmp[2][2]=c;
+    *this=operator*(tmp);
+    return *this;
 }
-void RMatrix4::rotation_y(float radians) {
+RMatrix4& RMatrix4::rotation_y(float radians) {
+    RMatrix4 tmp;
     float c=cos(radians);
     float s=sin(radians);
-    data[0][0]=c;
-    data[0][2]=s;
-    data[2][0]=-s;
-    data[2][2]=c;
+    tmp[0][0]=c;
+    tmp[0][2]=s;
+    tmp[2][0]=-s;
+    tmp[2][2]=c;
+    *this=operator*(tmp);
+    return *this;
 }
-void RMatrix4::rotation_z(float radians) {
+RMatrix4& RMatrix4::rotation_z(float radians) {
     float c=cos(radians);
     float s=sin(radians);
-    data[0][0]=c;
-    data[0][1]=-s;
-    data[1][0]=s;
-    data[1][1]=c;
+    RMatrix4 tmp;
+    tmp[0][0]=c;
+    tmp[0][1]=-s;
+    tmp[1][0]=s;
+    tmp[1][1]=c;
+    *this=operator*(tmp);
+    return *this;
+}
+RMatrix4& RMatrix4::shearing(float xy,float xz,float yx,float yz,float zx,float zy) {
+    RMatrix4 tmp;
+    tmp[0][1]=xy;
+    tmp[0][2]=xz;
+    tmp[1][0]=yx;
+    tmp[1][2]=yz;
+    tmp[2][0]=zx;
+    tmp[2][1]=zy;
+    *this=operator*(tmp);
+    return *this;
 }
 RMatrix3 RMatrix4::submatrix(int row,int col) {
     RMatrix3 ret;
@@ -141,6 +167,7 @@ bool RMatrix4::canInv() {
     if(floatCmp(determinant(),0))return false;
     return true;
 }
+
 RMatrix4 RMatrix4::inverse() {
     RMatrix4 ret;
     if(!canInv())return ret;
