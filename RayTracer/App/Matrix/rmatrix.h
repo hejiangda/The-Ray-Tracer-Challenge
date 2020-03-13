@@ -1,7 +1,8 @@
 #ifndef RMATRIX_H
 #define RMATRIX_H
 #include <vector>
-#include <../App/Tuple/rtuple.h>
+#include "../App/Tuple/rtuple.h"
+#include <QtMath>
 using namespace std;
 class RMatrix3;
 class RMatrix4
@@ -28,6 +29,9 @@ public:
     void translation(float x,float y,float z);
     void scale(float x,float y,float z);
     void print();
+    void rotation_x(float radians);
+    void rotation_y(float radians);
+    void rotation_z(float radians);
 };
 class RMatrix2
 {

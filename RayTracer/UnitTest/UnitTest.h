@@ -10,6 +10,7 @@
 #include <QString>
 #include <QStringList>
 #include <QDebug>
+#include <QtMath>
 using namespace testing;
 
 

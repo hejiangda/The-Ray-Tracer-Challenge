@@ -84,6 +84,30 @@ void RMatrix4::scale(float x,float y,float z) {
     data[1][1]*=y;
     data[2][2]*=z;
 }
+void RMatrix4::rotation_x(float radians) {
+    float c=cos(radians);
+    float s=sin(radians);
+    data[1][1]=c;
+    data[1][2]=-s;
+    data[2][1]=s;
+    data[2][2]=c;
+}
+void RMatrix4::rotation_y(float radians) {
+    float c=cos(radians);
+    float s=sin(radians);
+    data[0][0]=c;
+    data[0][2]=s;
+    data[2][0]=-s;
+    data[2][2]=c;
+}
+void RMatrix4::rotation_z(float radians) {
+    float c=cos(radians);
+    float s=sin(radians);
+    data[0][0]=c;
+    data[0][1]=-s;
+    data[1][0]=s;
+    data[1][1]=c;
+}
 RMatrix3 RMatrix4::submatrix(int row,int col) {
     RMatrix3 ret;
     int ii=0,jj=0;
