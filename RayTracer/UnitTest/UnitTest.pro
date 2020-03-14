@@ -10,15 +10,18 @@ HEADERS += \
         ../App/Tuple/rtuple.h \
         UnitTest.h \
         ../App/Canvas/rcanvas.h \
-        ../App/Matrix/rmatrix.h
+        ../App/Matrix/rmatrix.h \
+        ../App/Ray/rray.h
 
 SOURCES += \
         CanvasTest.cpp \
         MatrixTest.cpp \
         MatrixTransformationTest.cpp \
+        RaysTest.cpp \
         TupleTest.cpp \
         main.cpp \
         ../App/Tuple/rtuple.cpp \
         ../App/Canvas/rcanvas.cpp \
-        ../App/Matrix/rmatrix.cpp
+        ../App/Matrix/rmatrix.cpp \
+        ../App/Ray/rray.cpp
 

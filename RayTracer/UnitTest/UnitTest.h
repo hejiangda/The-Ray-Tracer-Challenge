@@ -7,6 +7,7 @@
 #include "../App/Canvas/rcanvas.h"
 #include "../App/Tuple/rtuple.h"
 #include "../App/Matrix/rmatrix.h"
+#include "../App/Ray/rray.h"
 #include <QString>
 #include <QStringList>
 #include <QDebug>
