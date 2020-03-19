@@ -78,6 +78,10 @@ https://blog.csdn.net/u010750137/article/details/104710846
 
 建立基础矩阵，矩阵的运算操作
 
-## 4.Matrix Transformation
+## 4. Matrix Transformation
 
 各类矩阵的变换：平移、旋转、放缩等
+
+## 5. Ray-Sphere Intersections
+
+实现有关光线与物体相交有关的代码，最终可以得到一个球投影在平面上的圆

@@ -36,6 +36,12 @@ FORMS += \
 TRANSLATIONS += \
     App_zh_CN.ts
 
+QMAKE_CXXFLAGS += --coverage
+QMAKE_LFLAGS += --coverage
+
+LIBS += \
+    -lgcov
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin

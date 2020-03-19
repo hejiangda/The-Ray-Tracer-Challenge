@@ -7,17 +7,14 @@ CONFIG += thread
 CONFIG += qt
 
 HEADERS += \
-        ../App/Tuple/rtuple.h \
         UnitTest.h \
-        ../App/Canvas/rcanvas.h \
-        ../App/Matrix/rmatrix.h \
-        ../App/Ray/rray.h
 
 SOURCES += \
         CanvasTest.cpp \
         MatrixTest.cpp \
         MatrixTransformationTest.cpp \
         RaysTest.cpp \
+        SpheresTest.cpp \
         TupleTest.cpp \
         main.cpp \
         ../App/Tuple/rtuple.cpp \
@@ -25,3 +22,6 @@ SOURCES += \
         ../App/Matrix/rmatrix.cpp \
         ../App/Ray/rray.cpp
 
+INCLUDEPATH += ../App
+QMAKE_CXXFLAGS += --coverage
+QMAKE_LFLAGS +=  --coverage

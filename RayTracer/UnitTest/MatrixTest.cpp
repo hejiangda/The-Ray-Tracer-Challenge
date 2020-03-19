@@ -291,9 +291,9 @@ TEST(Matrix,inverse1) {
     RMatrix4 b=a.inverse();
     EXPECT_EQ(a.determinant(),532);
     EXPECT_EQ(a.cofactor(2,3),-160);
-    EXPECT_TRUE(floatCmp(b[3][2],-160.0/532));
-    EXPECT_TRUE(floatCmp(a.cofactor(3,2),105));
-    EXPECT_TRUE(floatCmp(b[2][3],105.0/532));
+    EXPECT_FLOAT_EQ(b[3][2],-160.0/532);
+    EXPECT_FLOAT_EQ(a.cofactor(3,2),105);
+    EXPECT_FLOAT_EQ(b[2][3],105.0/532);
     EXPECT_EQ(b,RMatrix4({
        0.21805 ,  0.45113 ,  0.24060 , -0.04511 ,
       -0.80827 , -1.45677 , -0.44361 ,  0.52068 ,
