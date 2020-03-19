@@ -12,7 +12,7 @@ vector<float> RRay::intersect(RSphere s) {
     float c=sphere2Ray*sphere2Ray-1;
     float discriminant=b*b-4*a*c;
     if(discriminant<0)return {};
-    float t1=(-b-sqrt(discriminant)/(2*a))+origin.z;
-    float t2=(-b+sqrt(discriminant)/(2*a))+origin.z;
+    float t1=(-b-sqrt(discriminant))/(2*a);
+    float t2=(-b+sqrt(discriminant))/(2*a);
     return {t1,t2};
 }
