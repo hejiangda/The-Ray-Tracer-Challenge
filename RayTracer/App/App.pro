@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     Canvas/rcanvas.cpp \
+    Sphere/rsphere.cpp \
     main.cpp \
     mainwindow.cpp \
     Tuple/rtuple.cpp \
@@ -25,6 +26,7 @@ SOURCES += \
 
 HEADERS += \
     Canvas/rcanvas.h \
+    Sphere/rsphere.h \
     mainwindow.h \
     Tuple/rtuple.h \
     Matrix/rmatrix.h \

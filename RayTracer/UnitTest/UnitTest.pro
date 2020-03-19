@@ -20,8 +20,9 @@ SOURCES += \
         ../App/Tuple/rtuple.cpp \
         ../App/Canvas/rcanvas.cpp \
         ../App/Matrix/rmatrix.cpp \
-        ../App/Ray/rray.cpp
+        ../App/Ray/rray.cpp \
+        ../App/Sphere/rsphere.cpp
 
 INCLUDEPATH += ../App
-QMAKE_CXXFLAGS += --coverage
-QMAKE_LFLAGS +=  --coverage
+#QMAKE_CXXFLAGS += --coverage
+#QMAKE_LFLAGS +=  --coverage

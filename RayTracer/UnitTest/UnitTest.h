@@ -4,10 +4,11 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock-matchers.h>
 
-#include "../App/Canvas/rcanvas.h"
-#include "../App/Tuple/rtuple.h"
-#include "../App/Matrix/rmatrix.h"
-#include "../App/Ray/rray.h"
+#include "Canvas/rcanvas.h"
+#include "Tuple/rtuple.h"
+#include "Matrix/rmatrix.h"
+#include "Ray/rray.h"
+#include "Sphere/rsphere.h"
 #include <QString>
 #include <QStringList>
 #include <QDebug>
