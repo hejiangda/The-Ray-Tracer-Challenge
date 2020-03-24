@@ -11,6 +11,7 @@ HEADERS += \
 
 SOURCES += \
         CanvasTest.cpp \
+        IntersectionsTest.cpp \
         MatrixTest.cpp \
         MatrixTransformationTest.cpp \
         RaysTest.cpp \
@@ -24,5 +25,7 @@ SOURCES += \
         ../App/Sphere/rsphere.cpp
 
 INCLUDEPATH += ../App
+DEPENDPATH += ../App
+
 #QMAKE_CXXFLAGS += --coverage
 #QMAKE_LFLAGS +=  --coverage
