@@ -3,12 +3,13 @@
 
 #include "Tuple/rtuple.h"
 #include "Matrix/rmatrix.h"
-#include "Sphere/rsphere.h"
+#include "Objects/Sphere/rsphere.h"
+#include "Intersection/rintersection.h"
 class RRay
 {
 public:
     RRay(RPoint ori,RVector dir);
-    vector<float> intersect(RSphere s);
+    vector<RIntersection> intersect(RSphere s);
     RPoint origin;
     RVector direction;
     RPoint position(float t);

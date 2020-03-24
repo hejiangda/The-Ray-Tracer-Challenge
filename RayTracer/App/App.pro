@@ -17,16 +17,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     Canvas/rcanvas.cpp \
-    Sphere/rsphere.cpp \
+    Intersection/rintersection.cpp \
+    Objects/Sphere/rsphere.cpp \
+    Objects/robject.cpp \
     main.cpp \
     mainwindow.cpp \
     Tuple/rtuple.cpp \
     Matrix/rmatrix.cpp \
     Ray/rray.cpp
 
+
 HEADERS += \
     Canvas/rcanvas.h \
-    Sphere/rsphere.h \
+    Intersection/rintersection.h \
+    Objects/Sphere/rsphere.h \
+    Objects/robject.h \
     mainwindow.h \
     Tuple/rtuple.h \
     Matrix/rmatrix.h \

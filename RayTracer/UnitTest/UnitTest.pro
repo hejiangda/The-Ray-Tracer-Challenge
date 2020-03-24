@@ -22,7 +22,9 @@ SOURCES += \
         ../App/Canvas/rcanvas.cpp \
         ../App/Matrix/rmatrix.cpp \
         ../App/Ray/rray.cpp \
-        ../App/Sphere/rsphere.cpp
+        ../App/Objects/robject.cpp \
+        ../App/Objects/Sphere/rsphere.cpp \
+        ../App/Intersection/rintersection.cpp
 
 INCLUDEPATH += ../App
 DEPENDPATH += ../App

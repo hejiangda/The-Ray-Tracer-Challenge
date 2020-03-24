@@ -5,7 +5,7 @@ RRay::RRay(RPoint ori,RVector dir):origin(ori),direction(dir){}
 RPoint RRay::position(float t) {
     return origin+t*direction;
 }
-vector<float> RRay::intersect(RSphere s) {
+vector<RIntersection> RRay::intersect(RSphere s) {
     RVector sphere2Ray(origin-s.origin);
     float a=direction*direction;
     float b=2*direction*sphere2Ray;
@@ -14,5 +14,7 @@ vector<float> RRay::intersect(RSphere s) {
     if(discriminant<0)return {};
     float t1=(-b-sqrt(discriminant))/(2*a);
     float t2=(-b+sqrt(discriminant))/(2*a);
-    return {t1,t2};
+    RIntersection i1(t1,s),i2(t2,s);
+
+    return {i1,i2};
 }

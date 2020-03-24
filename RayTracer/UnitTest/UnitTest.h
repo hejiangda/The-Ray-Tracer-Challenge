@@ -8,7 +8,9 @@
 #include "Tuple/rtuple.h"
 #include "Matrix/rmatrix.h"
 #include "Ray/rray.h"
-#include "Sphere/rsphere.h"
+#include "Objects/Sphere/rsphere.h"
+#include "Intersection/rintersection.h"
+#include "Objects/robject.h"
 #include <QString>
 #include <QStringList>
 #include <QDebug>
