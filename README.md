@@ -76,7 +76,7 @@ https://blog.csdn.net/u010750137/article/details/104710846
 
 该章最后会将第一章的子弹发射后在风和重力作用下的运动轨迹图画出来
 
-![projectile](/home/happy/GitHub/The-Ray-Tracer-Challenge/img/projectile.png)
+![projectile](img/projectile.png)
 
 ## 3. Matrices 
 
@@ -88,10 +88,10 @@ https://blog.csdn.net/u010750137/article/details/104710846
 
 该章结尾会利用矩阵的各种运算画一个表盘：
 
-![clock](/home/happy/GitHub/The-Ray-Tracer-Challenge/img/clock.png)
+![clock](img/clock.png)
 
 ## 5. Ray-Sphere Intersections
 
 实现有关光线与物体相交有关的代码，最终可以得到一个球投影在平面上的圆
 
-![sphere](/home/happy/GitHub/The-Ray-Tracer-Challenge/img/sphere.png)
+![sphere](img/sphere.png)
