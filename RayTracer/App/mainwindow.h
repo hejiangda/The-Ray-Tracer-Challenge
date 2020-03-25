@@ -5,6 +5,9 @@
 #include "Tuple/rtuple.h"
 #include "Canvas/rcanvas.h"
 #include "Matrix/rmatrix.h"
+#include "Objects/Sphere/rsphere.h"
+#include "Ray/rray.h"
+#include "Intersection/rintersection.h"
 #include <QFile>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

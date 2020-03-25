@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
+/* projectile */
 //    projectile proj(RPoint(0,1,0),RVector(1,1.8,0).normalize()*11.25);
 //    environment env(RVector(0,-0.1,0),RVector(-0.01,0,0));
 //    int tick=0;
@@ -41,24 +41,63 @@ MainWindow::MainWindow(QWidget *parent)
 
 //    }
 //    file.write(ppm.toStdString().c_str(),ppm.length());
-    RCanvas clock(400,400);
-    RColor white(1,1,1);
-    clock.write(200,200,white);
-    RPoint p(0,1,0);
 
-    for(int i=0;i<12;i++) {
-        RMatrix4 rotScal;
-        rotScal.translation(200,200,0).scale(150,150,0).rotation_z((M_PI*i)/6);
-        RPoint tmp=rotScal*p;
-        clock.write(tmp.x,tmp.y,white);
-        qDebug()<<tmp.x<<" "<<tmp.y;
+
+/* clock */
+//    RCanvas clock(400,400);
+//    RColor white(1,1,1);
+//    clock.write(200,200,white);
+//    RPoint p(0,1,0);
+
+//    for(int i=0;i<12;i++) {
+//        RMatrix4 rotScal;
+//        rotScal.translation(200,200,0).scale(150,150,0).rotation_z((M_PI*i)/6);
+//        RPoint tmp=rotScal*p;
+//        clock.write(tmp.x,tmp.y,white);
+//        qDebug()<<tmp.x<<" "<<tmp.y;
+//    }
+//    QString clockPpm=clock.to_ppm();
+//    QFile file("clock.ppm");
+//    if(!file.open(QIODevice::ReadWrite)) {
+
+//    }
+//    file.write(clockPpm.toStdString().c_str(),clockPpm.length());
+
+
+/* ray cast a sphere */
+    RPoint ray_origin(0,0,-5);
+    RPoint wall(0,0,10);
+    const float wall_size=7.0;
+    const int canvas_pixels=100;
+    const float pixel_size=wall_size/canvas_pixels;
+    const float half=wall_size/2;
+
+    RCanvas canvas(canvas_pixels,canvas_pixels);
+    RColor color(1,0,0);
+    RSphere shape,tmp1;
+
+    qDebug()<<shape.id;
+    qDebug()<<RIntersection().obj.id;
+    for(int y=0;y<canvas_pixels;y++) {
+        float world_y=half-pixel_size*y;
+        for(int x=0;x<canvas_pixels;x++) {
+            float world_x=-half+pixel_size*x;
+            RPoint position(world_x,world_y,wall.z);
+            RRay r(ray_origin,RVector(position-ray_origin));
+            vector<RIntersection> xs=r.intersect(shape);
+            RIntersection tmp=RIntersection::hit(xs);
+            if(tmp!=RIntersection()) {
+                canvas.write(x,y,color);
+            }
+        }
     }
-    QString clockPpm=clock.to_ppm();
-    QFile file("clock.ppm");
+    QString sphere=canvas.to_ppm();
+    QFile file("sphere.ppm");
     if(!file.open(QIODevice::ReadWrite)) {
 
     }
-    file.write(clockPpm.toStdString().c_str(),clockPpm.length());
+    file.write(sphere.toStdString().c_str(),sphere.length());
+
 }
 
 MainWindow::~MainWindow()

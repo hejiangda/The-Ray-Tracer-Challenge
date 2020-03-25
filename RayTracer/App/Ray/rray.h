@@ -9,7 +9,7 @@ class RRay
 {
 public:
     RRay(RPoint ori,RVector dir);
-    vector<RIntersection> intersect(RSphere s);
+    vector<RIntersection> intersect(RSphere& s);
     RPoint origin;
     RVector direction;
     RPoint position(float t);

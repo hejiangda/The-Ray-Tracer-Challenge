@@ -43,11 +43,11 @@ FORMS += \
 TRANSLATIONS += \
     App_zh_CN.ts
 
-QMAKE_CXXFLAGS += --coverage
-QMAKE_LFLAGS += --coverage
+#QMAKE_CXXFLAGS += --coverage
+#QMAKE_LFLAGS += --coverage
 
-LIBS += \
-    -lgcov
+#LIBS += \
+#    -lgcov
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

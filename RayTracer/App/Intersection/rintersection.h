@@ -16,6 +16,9 @@ public:
 
     static vector<RIntersection> intersections(vector<RIntersection> v);
     bool operator==(const RIntersection& a)const;
+    bool operator!=(const RIntersection& a)const {
+        return !operator==(a);
+    };
     bool operator<(const RIntersection& a)const;
     static RIntersection hit(vector<RIntersection>& v);
 };

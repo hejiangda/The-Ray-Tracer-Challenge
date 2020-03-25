@@ -5,7 +5,7 @@ RRay::RRay(RPoint ori,RVector dir):origin(ori),direction(dir){}
 RPoint RRay::position(float t) {
     return origin+t*direction;
 }
-vector<RIntersection> RRay::intersect(RSphere s) {
+vector<RIntersection> RRay::intersect(RSphere& s) {
     RRay t=transform(s.transform.inverse());
     RVector sphere2Ray(t.origin-s.origin);
     float a=t.direction*t.direction;
