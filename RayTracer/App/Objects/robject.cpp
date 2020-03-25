@@ -1,6 +1,6 @@
 #include "robject.h"
 
-RObject::RObject()
+RObject::RObject():id(-1),type(SPHERE)
 {
 
 }
