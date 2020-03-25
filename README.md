@@ -74,6 +74,10 @@ https://blog.csdn.net/u010750137/article/details/104710846
 
 编写一个canvas并能输出ppm文件
 
+该章最后会将第一章的子弹发射后在风和重力作用下的运动轨迹图画出来
+
+![projectile](/home/happy/GitHub/The-Ray-Tracer-Challenge/img/projectile.png)
+
 ## 3. Matrices 
 
 建立基础矩阵，矩阵的运算操作
@@ -82,6 +86,12 @@ https://blog.csdn.net/u010750137/article/details/104710846
 
 各类矩阵的变换：平移、旋转、放缩等
 
+该章结尾会利用矩阵的各种运算画一个表盘：
+
+![clock](/home/happy/GitHub/The-Ray-Tracer-Challenge/img/clock.png)
+
 ## 5. Ray-Sphere Intersections
 
 实现有关光线与物体相交有关的代码，最终可以得到一个球投影在平面上的圆
+
+![sphere](/home/happy/GitHub/The-Ray-Tracer-Challenge/img/sphere.png)
