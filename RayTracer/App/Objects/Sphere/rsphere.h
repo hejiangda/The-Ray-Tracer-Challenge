@@ -3,12 +3,15 @@
 
 #include "Tuple/rtuple.h"
 #include "Objects/robject.h"
+#include "Matrix/rmatrix.h"
 class RSphere:public RObject
 {
 public:
     RSphere();
     RPoint origin;
     float r;
+    RMatrix4 transform;
+    void set_transform(RMatrix4 t);
 private:
     static int cnt;
 };

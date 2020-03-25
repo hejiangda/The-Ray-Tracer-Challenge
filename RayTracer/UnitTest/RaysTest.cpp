@@ -14,3 +14,21 @@ TEST(Rays,ComputeAPointFromADistance) {
     EXPECT_EQ(r.position(-1),RPoint(1,3,4));
     EXPECT_EQ(r.position(2.5),RPoint(4.5,3,4));
 }
+TEST(Rays,TranslatingARay) {
+    RRay r(RPoint(1,2,3),RVector(0,1,0));
+    RMatrix4 m;
+    m.translation(3,4,5);
+    RRay r2=r.transform(m);
+
+    EXPECT_EQ(r2.origin,RPoint(4,6,8));
+    EXPECT_EQ(r2.direction,RVector(0,1,0));
+}
+TEST(Rays,ScalingARay) {
+    RRay r(RPoint(1,2,3),RVector(0,1,0));
+    RMatrix4 m;
+    m.scale(2,3,4);
+    RRay r2=r.transform(m);
+
+    EXPECT_EQ(r2.origin,RPoint(2,6,12));
+    EXPECT_EQ(r2.direction,RVector(0,3,0));
+}

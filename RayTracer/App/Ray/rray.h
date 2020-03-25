@@ -13,6 +13,7 @@ public:
     RPoint origin;
     RVector direction;
     RPoint position(float t);
+    RRay transform(RMatrix4 m);
 };
 
 #endif // RRAY_H
