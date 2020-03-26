@@ -12,6 +12,7 @@ public:
     float r;
     RMatrix4 transform;
     void set_transform(RMatrix4 t);
+    RVector normal_at(RPoint b);
 private:
     static int cnt;
 };

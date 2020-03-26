@@ -66,3 +66,47 @@ TEST(Sphere,IntersectingATranslatedSphereWithARay) {
     vector<RIntersection> xs=r.intersect(s);
     EXPECT_EQ(xs.size(),0);
 }
+TEST(Sphere,NormalOnASphereAtXAxis) {
+    RSphere s;
+    RVector n=s.normal_at(RPoint(1,0,0));
+    EXPECT_EQ(n,RVector(1,0,0));
+
+}
+TEST(Sphere,NormalOnASphereAtYAxis) {
+    RSphere s;
+    RVector n=s.normal_at(RPoint(0,1,0));
+    EXPECT_EQ(n,RVector(0,1,0));
+
+}
+TEST(Sphere,NormalOnASphereAtZAxis) {
+    RSphere s;
+    RVector n=s.normal_at(RPoint(0,0,1));
+    EXPECT_EQ(n,RVector(0,0,1));
+
+}
+TEST(Sphere,NormalOnASphereAtNonAxis) {
+    RSphere s;
+    RVector n=s.normal_at(RPoint(sqrt(3)/3,sqrt(3)/3,sqrt(3)/3));
+    EXPECT_EQ(n,RVector(sqrt(3)/3,sqrt(3)/3,sqrt(3)/3));
+
+}
+TEST(Sphere,NormalIsNormalized) {
+    RSphere s;
+    RVector n=s.normal_at(RPoint(sqrt(3)/3,sqrt(3)/3,sqrt(3)/3));
+    EXPECT_EQ(n,n.normalize());
+
+}
+TEST(Sphere,ComputingTheNormalOnATranslatedSphere) {
+    RSphere s;
+    s.set_transform(RMatrix4().translation(0,1,0));
+    RVector n=s.normal_at(RPoint(0,1.70711,-0.70711));
+    EXPECT_EQ(n,RVector(0,0.70711,-0.70711));
+}
+TEST(Sphere,ComputingTheNormalOnATranslatedSphere1) {
+    RSphere s;
+    RMatrix4 m;
+    m.scale(1,0.5,1).rotation_z(M_PI/5);
+    s.set_transform(m);
+    RVector n=s.normal_at(RPoint(0,sqrt(2)/2,-sqrt(2)/2));
+    EXPECT_EQ(n,RVector(0,0.97014,-0.24254));
+}
