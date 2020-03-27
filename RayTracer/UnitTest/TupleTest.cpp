@@ -169,3 +169,15 @@ TEST(Colors,ColorMultiply) {
     RColor c1(1, 0.2, 0.4),c2(0.9, 1, 0.1);
     ASSERT_EQ(c1*c2,RColor(0.9, 0.2, 0.04));
 }
+TEST(Reflect,ReflectingAVectorApproachingAt45) {
+    RVector v(1,-1,0);
+    RVector n(0,1,0);
+    RVector r=v.reflect(n);
+    EXPECT_EQ(r,RVector(1,1,0));
+}
+TEST(Reflect,ReflectingAVectorOffASlantedSurface) {
+    RVector v(0,-1,0);
+    RVector n(sqrt(2)/2,sqrt(2)/2,0);
+    RVector r=v.reflect(n);
+    EXPECT_EQ(r,RVector(1,0,0));
+}
