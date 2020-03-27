@@ -35,6 +35,7 @@ public:
     float operator*(const RVector& b) const;
     RVector operator&(const RVector& b) const;
     RVector operator+(const RVector& b) const;
+    RVector reflect(RVector& n);
 };
 class RPoint:public RTuple
 {

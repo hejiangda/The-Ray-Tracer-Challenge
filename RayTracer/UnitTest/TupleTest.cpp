@@ -173,6 +173,7 @@ TEST(Reflect,ReflectingAVectorApproachingAt45) {
     RVector v(1,-1,0);
     RVector n(0,1,0);
     RVector r=v.reflect(n);
+    cout<<r.x<<" "<<r.y<<" "<<r.z<<endl;
     EXPECT_EQ(r,RVector(1,1,0));
 }
 TEST(Reflect,ReflectingAVectorOffASlantedSurface) {

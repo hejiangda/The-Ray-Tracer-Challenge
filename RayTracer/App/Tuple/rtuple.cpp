@@ -109,7 +109,9 @@ RVector RVector::operator&(const RVector& b) const {
 RVector RVector::operator+(const RVector &b) const {
     return RVector(x+b.x,y+b.y,z+b.z);
 }
-
+RVector RVector::reflect(RVector& n) {
+    return *this-n*2*(n**this);
+}
 RColor::RColor(float r,float g,float b):r(r),g(g),b(b) {
 
 }
