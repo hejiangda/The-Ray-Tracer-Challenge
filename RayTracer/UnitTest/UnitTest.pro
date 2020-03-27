@@ -12,6 +12,8 @@ HEADERS += \
 SOURCES += \
         CanvasTest.cpp \
         IntersectionsTest.cpp \
+        LightsTest.cpp \
+        MatrialsTest.cpp \
         MatrixTest.cpp \
         MatrixTransformationTest.cpp \
         RaysTest.cpp \

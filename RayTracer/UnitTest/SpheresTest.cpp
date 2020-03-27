@@ -110,3 +110,15 @@ TEST(Sphere,ComputingTheNormalOnATranslatedSphere1) {
     RVector n=s.normal_at(RPoint(0,sqrt(2)/2,-sqrt(2)/2));
     EXPECT_EQ(n,RVector(0,0.97014,-0.24254));
 }
+TEST(Sphere,SphereDefaultMaterial) {
+    RSphere s;
+    RMaterial m=s.material;
+    EXPECT_EQ(m,RMaterial());
+}
+TEST(Sphere,AssignMaterialToSphere) {
+    RSphere s;
+    RMaterial m;
+    m.ambient=1;
+    s.material=m;
+    EXPECT_EQ(s.material,m);
+}
