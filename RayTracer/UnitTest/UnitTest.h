@@ -11,6 +11,8 @@
 #include "Objects/Sphere/rsphere.h"
 #include "Intersection/rintersection.h"
 #include "Objects/robject.h"
+#include "Light/rmaterial.h"
+#include "Light/rpointlight.h"
 #include <QString>
 #include <QStringList>
 #include <QDebug>

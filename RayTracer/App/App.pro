@@ -18,6 +18,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     Canvas/rcanvas.cpp \
     Intersection/rintersection.cpp \
+    Light/rmaterial.cpp \
+    Light/rpointlight.cpp \
     Objects/Sphere/rsphere.cpp \
     Objects/robject.cpp \
     main.cpp \
@@ -30,6 +32,8 @@ SOURCES += \
 HEADERS += \
     Canvas/rcanvas.h \
     Intersection/rintersection.h \
+    Light/rmaterial.h \
+    Light/rpointlight.h \
     Objects/Sphere/rsphere.h \
     Objects/robject.h \
     mainwindow.h \

@@ -28,6 +28,7 @@ public:
     RVector(float x=0,float y=0,float z=0);
     RVector(RTuple b);
     RVector operator-(const RVector& );
+    RVector operator-();
     float magnitude();
     RVector normalize();
     RVector operator*(const float& b) const;

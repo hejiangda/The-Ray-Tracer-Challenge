@@ -15,7 +15,7 @@ vector<RIntersection> RRay::intersect(RSphere& s) {
     if(discriminant<0)return {};
     float t1=(-b-sqrt(discriminant))/(2*a);
     float t2=(-b+sqrt(discriminant))/(2*a);
-    RIntersection i1(t1,s),i2(t2,s);
+    RIntersection i1(t1,&s),i2(t2,&s);
 
     return {i1,i2};
 }

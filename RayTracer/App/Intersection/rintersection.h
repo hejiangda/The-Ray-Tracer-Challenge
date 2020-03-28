@@ -10,9 +10,9 @@ class RIntersection
 {
 public:
     RIntersection();
-    RIntersection(float t,RObject o);
+    RIntersection(float t,RObject* o);
     float t;
-    RObject obj;
+    RObject* obj;
 
     static vector<RIntersection> intersections(vector<RIntersection> v);
     bool operator==(const RIntersection& a)const;

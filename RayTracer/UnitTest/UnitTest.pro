@@ -26,7 +26,9 @@ SOURCES += \
         ../App/Ray/rray.cpp \
         ../App/Objects/robject.cpp \
         ../App/Objects/Sphere/rsphere.cpp \
-        ../App/Intersection/rintersection.cpp
+        ../App/Intersection/rintersection.cpp \
+        ../App/Light/rmaterial.cpp \
+        ../App/Light/rpointlight.cpp
 
 INCLUDEPATH += ../App
 DEPENDPATH += ../App

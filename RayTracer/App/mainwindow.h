@@ -8,6 +8,8 @@
 #include "Objects/Sphere/rsphere.h"
 #include "Ray/rray.h"
 #include "Intersection/rintersection.h"
+#include "Light/rmaterial.h"
+#include "Light/rpointlight.h"
 #include <QFile>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

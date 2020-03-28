@@ -65,34 +65,78 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 /* ray cast a sphere */
+//    RPoint ray_origin(0,0,-5);
+//    RPoint wall(0,0,10);
+//    const float wall_size=7.0;
+//    const int canvas_pixels=400;
+//    const float pixel_size=wall_size/canvas_pixels;
+//    const float half=wall_size/2;
+
+//    RCanvas canvas(canvas_pixels,canvas_pixels);
+//    RColor color(1,0,0);
+//    RSphere shape,tmp1;
+
+//    qDebug()<<shape.id;
+////    qDebug()<<RIntersection().obj.id;
+//    for(int y=0;y<canvas_pixels;y++) {
+//        float world_y=half-pixel_size*y;
+//        for(int x=0;x<canvas_pixels;x++) {
+//            float world_x=-half+pixel_size*x;
+//            RPoint position(world_x,world_y,wall.z);
+//            RRay r(ray_origin,RVector(position-ray_origin));
+//            vector<RIntersection> xs=r.intersect(shape);
+//            RIntersection tmp=RIntersection::hit(xs);
+//            if(tmp!=RIntersection()) {
+//                canvas.write(x,y,color);
+//            }
+//        }
+//    }
+//    QString sphere=canvas.to_ppm();
+//    QFile file("sphere.ppm");
+//    if(!file.open(QIODevice::ReadWrite)) {
+
+//    }
+//    file.write(sphere.toStdString().c_str(),sphere.length());
+
+/* 3D rendered sphere*/
     RPoint ray_origin(0,0,-5);
     RPoint wall(0,0,10);
     const float wall_size=7.0;
-    const int canvas_pixels=100;
+    const int canvas_pixels=400;
     const float pixel_size=wall_size/canvas_pixels;
     const float half=wall_size/2;
 
     RCanvas canvas(canvas_pixels,canvas_pixels);
     RColor color(1,0,0);
-    RSphere shape,tmp1;
+    RSphere shape;
+    shape.material.color=RColor(1,0.2,1);
+    RPointLight light({-10,10,-10},{1,1,1});
 
     qDebug()<<shape.id;
-    qDebug()<<RIntersection().obj.id;
     for(int y=0;y<canvas_pixels;y++) {
         float world_y=half-pixel_size*y;
         for(int x=0;x<canvas_pixels;x++) {
             float world_x=-half+pixel_size*x;
             RPoint position(world_x,world_y,wall.z);
-            RRay r(ray_origin,RVector(position-ray_origin));
+
+            RRay r(ray_origin,RVector(position-ray_origin).normalize());
+
             vector<RIntersection> xs=r.intersect(shape);
             RIntersection tmp=RIntersection::hit(xs);
+
             if(tmp!=RIntersection()) {
+                RPoint point=r.position(tmp.t);
+                RSphere& o=*((RSphere*)tmp.obj);
+                RVector normal=o.normal_at(point).normalize();
+                RVector eye=-r.direction.normalize();
+                color=lighting(o.material,light,point,eye,normal);
+//                qDebug()<<"Color:"<<color.r<<" "<<color.g<<" "<<color.b;
                 canvas.write(x,y,color);
             }
         }
     }
     QString sphere=canvas.to_ppm();
-    QFile file("sphere.ppm");
+    QFile file("3dsphere.ppm");
     if(!file.open(QIODevice::ReadWrite)) {
 
     }

@@ -95,3 +95,9 @@ https://blog.csdn.net/u010750137/article/details/104710846
 实现有关光线与物体相交有关的代码，最终可以得到一个球投影在平面上的圆
 
 ![sphere](img/sphere.png)
+
+## 6. Light and Shading
+
+实现光照和材质，在前一章的基础上可以实现球的渲染
+
+![3dsphere](img/3dsphere.png)

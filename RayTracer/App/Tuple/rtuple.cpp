@@ -84,6 +84,9 @@ RVector::RVector(RTuple b) {
 RVector RVector::operator-(const RVector& b) {
     return RVector(x-b.x,y-b.y,z-b.z);
 }
+RVector RVector::operator-() {
+    return {-x,-y,-z};
+}
 float RVector::magnitude() {
     return std::sqrt(x*x+y*y+z*z);
 }

@@ -1,6 +1,6 @@
 #include "rintersection.h"
-RIntersection::RIntersection():t(0),obj(RObject()){};
-RIntersection::RIntersection(float t,RObject o):t(t),obj(o)
+RIntersection::RIntersection():t(0),obj(nullptr){};
+RIntersection::RIntersection(float t,RObject* o):t(t),obj(o)
 {
 
 }
@@ -12,7 +12,9 @@ vector<RIntersection> RIntersection::intersections(vector<RIntersection> v) {
     return v;
 }
 bool RIntersection::operator==(const RIntersection& a)const {
-    return t==a.t and obj==a.obj;
+    if(obj==nullptr)
+        return t==a.t and obj==a.obj;
+    return t==a.t and *obj==*a.obj;
 }
 RIntersection RIntersection::hit(vector<RIntersection>& v) {
     for(auto& x:v) {

@@ -36,8 +36,8 @@ TEST(Sphere,ShpereBehindRay) {
     RSphere s;
     vector<RIntersection> xs=r.intersect(s);
     ASSERT_EQ(xs.size(),2);
-    EXPECT_EQ(xs[0].obj,s);
-    EXPECT_EQ(xs[1].obj,s);
+    EXPECT_EQ(*xs[0].obj,s);
+    EXPECT_EQ(*xs[1].obj,s);
 }
 TEST(Sphere,DefaultTransformation) {
     RSphere s;
