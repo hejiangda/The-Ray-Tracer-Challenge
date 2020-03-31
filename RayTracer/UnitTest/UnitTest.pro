@@ -19,6 +19,7 @@ SOURCES += \
         RaysTest.cpp \
         SpheresTest.cpp \
         TupleTest.cpp \
+        WorldTest.cpp \
         main.cpp \
         ../App/Tuple/rtuple.cpp \
         ../App/Canvas/rcanvas.cpp \
